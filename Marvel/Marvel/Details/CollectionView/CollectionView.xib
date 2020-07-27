@@ -1,18 +1,51 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewCell" customModule="Marvel" customModuleProvider="target">
+            <connections>
+                <outlet property="comicImage" destination="X0q-PZ-JaS" id="e3L-y7-rNw"/>
+                <outlet property="comicName" destination="Ln7-Pc-tmY" id="DLb-qr-2ZS"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-        </view>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="0u4-hP-b9K" customClass="ComicsViewCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="393"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fUm-68-6R2">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="393"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-PZ-JaS">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="370"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="260" id="JwI-6z-S1t"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln7-Pc-tmY">
+                        <rect key="frame" x="0.0" y="370" width="260" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ln7-Pc-tmY" firstAttribute="leading" secondItem="fUm-68-6R2" secondAttribute="leading" id="0th-Om-yYi"/>
+                    <constraint firstAttribute="trailing" secondItem="Ln7-Pc-tmY" secondAttribute="trailing" id="5EG-A6-YNT"/>
+                    <constraint firstItem="X0q-PZ-JaS" firstAttribute="top" secondItem="fUm-68-6R2" secondAttribute="top" id="B6i-kf-bM4"/>
+                    <constraint firstAttribute="trailing" secondItem="X0q-PZ-JaS" secondAttribute="trailing" id="DFn-b8-1TP"/>
+                    <constraint firstAttribute="bottom" secondItem="Ln7-Pc-tmY" secondAttribute="bottom" id="FEn-o4-Gwg"/>
+                    <constraint firstItem="Ln7-Pc-tmY" firstAttribute="top" secondItem="X0q-PZ-JaS" secondAttribute="bottom" id="HlB-fF-J2D"/>
+                    <constraint firstItem="X0q-PZ-JaS" firstAttribute="leading" secondItem="fUm-68-6R2" secondAttribute="leading" id="uwF-ON-7Ip"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="260" height="393"/>
+            <point key="canvasLocation" x="528.98550724637687" y="29.129464285714285"/>
+        </collectionViewCell>
     </objects>
 </document>
