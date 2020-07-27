@@ -10,23 +10,25 @@ import Foundation
 
 protocol HomeInteractorProtocol {
     var worker: HomeWorkerProtocol? { get set }
+    var presenter: HomePresenterProtocol? { get set }
     func onViewLoad()
 }
 
 class HomeInteractor: HomeInteractorProtocol {
     var worker: HomeWorkerProtocol?
-    var response: APIResponse?
+    var presenter: HomePresenterProtocol?
     private let auth = Auth(endPoint: .characters)
     private let apiKey = "b64080ac39198f95abcdb20fc185b688"
     private let privateKey = "d4cce909b9e33cd8cb10d483c082a8fe2fca0322"
     
-    init(worker: HomeWorkerProtocol) {
+    init(worker: HomeWorkerProtocol, presenter: HomePresenterProtocol) {
         self.worker = worker
+        self.presenter = presenter
     }
     
     func onViewLoad() {
         worker?.makeGETRequest(urlString: makeStringURL()) { response in
-            self.response = response
+            self.presenter?.show(characters: response.data.results)
         }
     }
     
