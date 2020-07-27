@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct APIResponse: Codable {
+struct APIResponseCharacters: Codable {
     var code: Int
     var status: String
-    var data: APIData
+    var data: APIDataCharacters
+}
+
+struct APIResponseComics: Codable {
+    var code: Int
+    var status: String
+    var data: APIDataComics
 }
