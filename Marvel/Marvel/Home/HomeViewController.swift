@@ -8,13 +8,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    let worker = HomeWorker()
+protocol HomeViewControlerProtocol {
+    var interactor: HomeInteractorProtocol? { get set }
+}
+
+class HomeViewController: UIViewController, HomeViewControlerProtocol {
+    var interactor: HomeInteractorProtocol?
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        worker.makeGETRequest { data in
-            print(data)
-        }
+        interactor?.onViewLoad()
     }
 }

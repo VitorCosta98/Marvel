@@ -9,11 +9,11 @@
 import XCTest
 @testable import Marvel
 
-class HomeWorker: XCTestCase {
+class HomeWorkerTests: XCTestCase {
     var worker: HomeWorker?
     var response: APIResponse?
     
-    override func setUpWithError() throws {
+    override func setUp() {
         worker = HomeWorker()
     }
 
@@ -22,7 +22,7 @@ class HomeWorker: XCTestCase {
         response = nil
     }
 
-    func testIfTheFuncDecodeItsWorks() throws {
+    func testIfTheFuncDecodeItsWorks() {
         guard let data = """
             [
             {

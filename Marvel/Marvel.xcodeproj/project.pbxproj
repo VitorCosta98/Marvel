@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A78D15B24CE8FAD007B2272 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78D15A24CE8FAD007B2272 /* HomeInteractor.swift */; };
+		4A78D15F24CE94B2007B2272 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78D15E24CE94B2007B2272 /* HomeInteractorTests.swift */; };
 		4ADF74EA24CE679400346D65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF74E924CE679400346D65 /* AppDelegate.swift */; };
 		4ADF74EC24CE679400346D65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF74EB24CE679400346D65 /* SceneDelegate.swift */; };
 		4ADF74F324CE679900346D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADF74F224CE679900346D65 /* Assets.xcassets */; };
@@ -20,7 +22,7 @@
 		4ADF751E24CE6AE500346D65 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751D24CE6AE500346D65 /* Auth.swift */; };
 		4ADF752424CE70F500346D65 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752324CE70F500346D65 /* AuthTests.swift */; };
 		4ADF752624CE77F600346D65 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752524CE77F600346D65 /* HomeWorker.swift */; };
-		4ADF752924CE7BF100346D65 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752824CE7BF100346D65 /* HomeWorker.swift */; };
+		4ADF752924CE7BF100346D65 /* HomeWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752824CE7BF100346D65 /* HomeWorkerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A78D15A24CE8FAD007B2272 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		4A78D15E24CE94B2007B2272 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		4ADF74E624CE679400346D65 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADF74E924CE679400346D65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADF74EB24CE679400346D65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +56,7 @@
 		4ADF752224CE70F500346D65 /* MarvelTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4ADF752324CE70F500346D65 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 		4ADF752524CE77F600346D65 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
-		4ADF752824CE7BF100346D65 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		4ADF752824CE7BF100346D65 /* HomeWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +113,7 @@
 		4ADF74FF24CE679900346D65 /* MarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				4ADF752724CE7B7600346D65 /* HomeWorker */,
+				4ADF752724CE7B7600346D65 /* HomeTests */,
 				4ADF752124CE6DC700346D65 /* Auth */,
 				4ADF750224CE679900346D65 /* Info.plist */,
 			);
@@ -121,6 +125,7 @@
 			children = (
 				4ADF750E24CE67DC00346D65 /* HomeViewController.swift */,
 				4ADF752524CE77F600346D65 /* HomeWorker.swift */,
+				4A78D15A24CE8FAD007B2272 /* HomeInteractor.swift */,
 				4ADF750C24CE67CE00346D65 /* HomeView.xib */,
 			);
 			path = Home;
@@ -154,12 +159,13 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		4ADF752724CE7B7600346D65 /* HomeWorker */ = {
+		4ADF752724CE7B7600346D65 /* HomeTests */ = {
 			isa = PBXGroup;
 			children = (
-				4ADF752824CE7BF100346D65 /* HomeWorker.swift */,
+				4ADF752824CE7BF100346D65 /* HomeWorkerTests.swift */,
+				4A78D15E24CE94B2007B2272 /* HomeInteractorTests.swift */,
 			);
-			path = HomeWorker;
+			path = HomeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +273,7 @@
 				4ADF74EA24CE679400346D65 /* AppDelegate.swift in Sources */,
 				4ADF752624CE77F600346D65 /* HomeWorker.swift in Sources */,
 				4ADF751324CE696F00346D65 /* APIResponse.swift in Sources */,
+				4A78D15B24CE8FAD007B2272 /* HomeInteractor.swift in Sources */,
 				4ADF74EC24CE679400346D65 /* SceneDelegate.swift in Sources */,
 				4ADF751724CE69C400346D65 /* Character.swift in Sources */,
 				4ADF751524CE69A400346D65 /* APIData.swift in Sources */,
@@ -280,7 +287,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADF752924CE7BF100346D65 /* HomeWorker.swift in Sources */,
+				4A78D15F24CE94B2007B2272 /* HomeInteractorTests.swift in Sources */,
+				4ADF752924CE7BF100346D65 /* HomeWorkerTests.swift in Sources */,
 				4ADF752424CE70F500346D65 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

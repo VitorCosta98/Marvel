@@ -14,15 +14,15 @@ struct Character: Codable {
     var thumbnail: Thumbnail
     var comics: RelatedWorks
     var series: RelatedWorks
-    
-    struct RelatedWorks: Codable {
-        var returned: Int
-        var items: [Items]
-        var available: Int
-        
-        struct Items: Codable {
-            var name: String
-            var resourceURI: String
-        }
-    }
+}
+
+struct RelatedWorks: Codable {
+    var returned: Int
+    var items: [Items]
+    var available: Int
+}
+
+struct Items: Codable {
+    var name: String
+    var resourceURI: String
 }

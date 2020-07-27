@@ -9,18 +9,13 @@
 import Foundation
 
 protocol HomeWorkerProtocol {
-    func makeGETRequest(completion: @escaping(APIResponse) -> Void)
+    func makeGETRequest(urlString: String, completion: @escaping(APIResponse) -> Void)
     func decode(data: Data) -> APIResponse?
 }
 
 class HomeWorker: HomeWorkerProtocol {
-    private let auth = Auth(endPoint: .characters)
     
-    func makeGETRequest(completion: @escaping(APIResponse) -> Void) {
-        let timeStamp = Int(Date().timeIntervalSince1970)
-        let urlString = auth.makeStringURL(apiKey: "b64080ac39198f95abcdb20fc185b688",
-                                                timeStamp: timeStamp,
-                                                privateKey: "d4cce909b9e33cd8cb10d483c082a8fe2fca0322")
+    func makeGETRequest(urlString: String, completion: @escaping(APIResponse) -> Void) {
         guard let url = URL(string: urlString) else { return }
 
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)

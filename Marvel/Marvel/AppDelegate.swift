@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let controller = HomeViewController(nibName: "HomeView", bundle: nil)
+        let worker = HomeWorker()
+        let interactor = HomeInteractor(worker: worker)
+        controller.interactor = interactor
         
         let nav = UINavigationController(rootViewController: controller)
         window?.rootViewController = nav
