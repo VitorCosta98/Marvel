@@ -26,13 +26,11 @@ class DetailsWorker: DetailsWorkerProtocol {
                 if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] {
                     let jsonData = try JSONSerialization.data(withJSONObject: jsonObject as Any, options: .prettyPrinted)
                     guard let apiResponse = self.decode(data: jsonData) else { return }
-                    print(apiResponse)
-                    //to call completion
+                    completion(apiResponse)
                 }
             } catch {
                 error.localizedDescription
             }
-            
         }.resume()
     }
     
