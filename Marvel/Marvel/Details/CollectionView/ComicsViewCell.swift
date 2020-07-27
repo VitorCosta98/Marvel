@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsViewCell: UICollectionViewCell {
+class ComicsViewCell: UICollectionViewCell {
     @IBOutlet weak var comicImage: UIImageView!
     @IBOutlet weak var comicName: UILabel!
     
