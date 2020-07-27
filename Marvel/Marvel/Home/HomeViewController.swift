@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, HomeViewControlerProtocol {
         super.viewDidLoad()
         
         let nib = UINib(nibName: "TableView", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "HomeCell")
+        tableView.register(nib, forCellReuseIdentifier: "TableCell")
         tableView.delegate = self
         tableView.dataSource = self
         interactor?.onViewLoad()
