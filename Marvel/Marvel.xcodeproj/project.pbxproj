@@ -11,7 +11,6 @@
 		4ADF74EC24CE679400346D65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF74EB24CE679400346D65 /* SceneDelegate.swift */; };
 		4ADF74F324CE679900346D65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADF74F224CE679900346D65 /* Assets.xcassets */; };
 		4ADF74F624CE679900346D65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADF74F424CE679900346D65 /* LaunchScreen.storyboard */; };
-		4ADF750124CE679900346D65 /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF750024CE679900346D65 /* MarvelTests.swift */; };
 		4ADF750D24CE67CE00346D65 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADF750C24CE67CE00346D65 /* HomeView.xib */; };
 		4ADF750F24CE67DC00346D65 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF750E24CE67DC00346D65 /* HomeViewController.swift */; };
 		4ADF751324CE696F00346D65 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751224CE696F00346D65 /* APIResponse.swift */; };
@@ -19,6 +18,7 @@
 		4ADF751724CE69C400346D65 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751624CE69C400346D65 /* Character.swift */; };
 		4ADF751924CE69E600346D65 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751824CE69E600346D65 /* Thumbnail.swift */; };
 		4ADF751E24CE6AE500346D65 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751D24CE6AE500346D65 /* Auth.swift */; };
+		4ADF752424CE70F500346D65 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752324CE70F500346D65 /* AuthTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		4ADF74F524CE679900346D65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ADF74F724CE679900346D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ADF74FC24CE679900346D65 /* MarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4ADF750024CE679900346D65 /* MarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTests.swift; sourceTree = "<group>"; };
 		4ADF750224CE679900346D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ADF750C24CE67CE00346D65 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		4ADF750E24CE67DC00346D65 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +47,8 @@
 		4ADF751624CE69C400346D65 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		4ADF751824CE69E600346D65 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		4ADF751D24CE6AE500346D65 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		4ADF752224CE70F500346D65 /* MarvelTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4ADF752324CE70F500346D65 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +105,7 @@
 		4ADF74FF24CE679900346D65 /* MarvelTests */ = {
 			isa = PBXGroup;
 			children = (
-				4ADF750024CE679900346D65 /* MarvelTests.swift */,
+				4ADF752124CE6DC700346D65 /* Auth */,
 				4ADF750224CE679900346D65 /* Info.plist */,
 			);
 			path = MarvelTests;
@@ -136,6 +137,15 @@
 				4ADF751D24CE6AE500346D65 /* Auth.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4ADF752124CE6DC700346D65 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				4ADF752324CE70F500346D65 /* AuthTests.swift */,
+				4ADF752224CE70F500346D65 /* MarvelTests-Bridging-Header.h */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +201,7 @@
 					};
 					4ADF74FB24CE679900346D65 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 						TestTargetID = 4ADF74E524CE679400346D65;
 					};
 				};
@@ -254,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADF750124CE679900346D65 /* MarvelTests.swift in Sources */,
+				4ADF752424CE70F500346D65 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +446,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8PCSD98CVA;
 				INFOPLIST_FILE = MarvelTests/Info.plist;
@@ -446,6 +458,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitor.MarvelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelTests/Auth/MarvelTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel.app/Marvel";
@@ -457,6 +471,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8PCSD98CVA;
 				INFOPLIST_FILE = MarvelTests/Info.plist;
@@ -468,6 +483,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitor.MarvelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelTests/Auth/MarvelTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel.app/Marvel";
