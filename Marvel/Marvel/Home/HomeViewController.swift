@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeViewControlerProtocol {
     var interactor: HomeInteractorProtocol? { get set }
+    func show(characters: [Character])
 }
 
 class HomeViewController: UIViewController, HomeViewControlerProtocol {
@@ -26,13 +27,14 @@ class HomeViewController: UIViewController, HomeViewControlerProtocol {
         tableView.delegate = self
         tableView.dataSource = self
         interactor?.onViewLoad()
-        let items = [Items(name: "someName", resourceURI: "someResource")]
-        let relatedWorks = RelatedWorks(returned: 0, items: items, available: 0)
-        let thumbnail = Thumbnail(path: "somePath", ext: "someExtension")
-        let character1: Character = Character(id: 0, name: "Naruto", thumbnail: thumbnail, comics: relatedWorks, series: relatedWorks)
-        let character2: Character = Character(id: 0, name: "Sasuke", thumbnail: thumbnail, comics: relatedWorks, series: relatedWorks)
-        characters.append(character1)
-        characters.append(character2)
+    }
+    
+    //MARK: Functions
+    func show(characters: [Character]) {
+        self.characters = characters
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -44,7 +46,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeViewCell {
-            guard let urlImage = URL(string: "https://conteudo.imguol.com.br/c/entretenimento/16/2017/06/27/naruto-1498593686428_v2_450x337.png") else { return UITableViewCell()}
+            guard let urlImage = URL(string: "\(characters[indexPath.row].thumbnail.path).\(characters[indexPath.row].thumbnail.ext)") else { return UITableViewCell()}
             cell.setup(imageURL: urlImage, name: characters[indexPath.row].name)
             return cell
         }
