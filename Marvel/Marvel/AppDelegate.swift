@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let controller = HomeViewController(nibName: "HomeView", bundle: nil)
         let worker = HomeWorker()
-        let interactor = HomeInteractor(worker: worker)
+        let presenter = HomePresenter(view: controller)
+        let interactor = HomeInteractor(worker: worker, presenter: presenter)
         controller.interactor = interactor
         
         let nav = UINavigationController(rootViewController: controller)
