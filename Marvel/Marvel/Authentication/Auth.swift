@@ -11,7 +11,7 @@ import CryptoKit
 
 enum Endpoints: String {
     case characters = "https://gateway.marvel.com/v1/public/characters?"
-    case comics = "https://gateway.marvel.com/v1/public/comics?"
+    case comics = "https://gateway.marvel.com/v1/public/characters/"
 }
 
 class Auth {
@@ -21,9 +21,15 @@ class Auth {
         self.endpoint = endPoint
     }
     
-    func makeStringURL(apiKey: String, timeStamp: Int, privateKey: String) -> String {
+    func makeStringURL(apiKey: String, timeStamp: Int, privateKey: String, id: String = "") -> String {
         let hash = makeHash(apikey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
-        return "\(endpoint.rawValue)ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
+        
+        switch endpoint {
+        case .characters:
+            return "\(endpoint.rawValue)ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
+        case .comics:
+            return "\(endpoint.rawValue)\(id)/comics?ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
+        }
     }
     
     private func makeHash(apikey: String, timeStamp: Int, privateKey: String) -> String {
