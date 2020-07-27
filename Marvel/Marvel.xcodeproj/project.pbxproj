@@ -19,6 +19,8 @@
 		4ADF751924CE69E600346D65 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751824CE69E600346D65 /* Thumbnail.swift */; };
 		4ADF751E24CE6AE500346D65 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751D24CE6AE500346D65 /* Auth.swift */; };
 		4ADF752424CE70F500346D65 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752324CE70F500346D65 /* AuthTests.swift */; };
+		4ADF752624CE77F600346D65 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752524CE77F600346D65 /* HomeWorker.swift */; };
+		4ADF752924CE7BF100346D65 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF752824CE7BF100346D65 /* HomeWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4ADF751D24CE6AE500346D65 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		4ADF752224CE70F500346D65 /* MarvelTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4ADF752324CE70F500346D65 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
+		4ADF752524CE77F600346D65 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		4ADF752824CE7BF100346D65 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		4ADF74FF24CE679900346D65 /* MarvelTests */ = {
 			isa = PBXGroup;
 			children = (
+				4ADF752724CE7B7600346D65 /* HomeWorker */,
 				4ADF752124CE6DC700346D65 /* Auth */,
 				4ADF750224CE679900346D65 /* Info.plist */,
 			);
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4ADF750E24CE67DC00346D65 /* HomeViewController.swift */,
+				4ADF752524CE77F600346D65 /* HomeWorker.swift */,
 				4ADF750C24CE67CE00346D65 /* HomeView.xib */,
 			);
 			path = Home;
@@ -146,6 +152,14 @@
 				4ADF752224CE70F500346D65 /* MarvelTests-Bridging-Header.h */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		4ADF752724CE7B7600346D65 /* HomeWorker */ = {
+			isa = PBXGroup;
+			children = (
+				4ADF752824CE7BF100346D65 /* HomeWorker.swift */,
+			);
+			path = HomeWorker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADF74EA24CE679400346D65 /* AppDelegate.swift in Sources */,
+				4ADF752624CE77F600346D65 /* HomeWorker.swift in Sources */,
 				4ADF751324CE696F00346D65 /* APIResponse.swift in Sources */,
 				4ADF74EC24CE679400346D65 /* SceneDelegate.swift in Sources */,
 				4ADF751724CE69C400346D65 /* Character.swift in Sources */,
@@ -265,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADF752924CE7BF100346D65 /* HomeWorker.swift in Sources */,
 				4ADF752424CE70F500346D65 /* AuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

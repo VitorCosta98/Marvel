@@ -9,9 +9,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    let worker = HomeWorker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        worker.makeGETRequest { data in
+            print(data)
+        }
     }
 }
