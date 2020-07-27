@@ -18,6 +18,7 @@
 		4ADF751524CE69A400346D65 /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751424CE69A400346D65 /* APIData.swift */; };
 		4ADF751724CE69C400346D65 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751624CE69C400346D65 /* Character.swift */; };
 		4ADF751924CE69E600346D65 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751824CE69E600346D65 /* Thumbnail.swift */; };
+		4ADF751E24CE6AE500346D65 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF751D24CE6AE500346D65 /* Auth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		4ADF751424CE69A400346D65 /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		4ADF751624CE69C400346D65 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		4ADF751824CE69E600346D65 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		4ADF751D24CE6AE500346D65 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		4ADF74E824CE679400346D65 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				4ADF751C24CE6AC800346D65 /* Authentication */,
 				4ADF751124CE695600346D65 /* Models */,
 				4ADF750B24CE67BD00346D65 /* Home */,
 				4ADF74E924CE679400346D65 /* AppDelegate.swift */,
@@ -125,6 +128,14 @@
 				4ADF751824CE69E600346D65 /* Thumbnail.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4ADF751C24CE6AC800346D65 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4ADF751D24CE6AE500346D65 /* Auth.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				4ADF751524CE69A400346D65 /* APIData.swift in Sources */,
 				4ADF750F24CE67DC00346D65 /* HomeViewController.swift in Sources */,
 				4ADF751924CE69E600346D65 /* Thumbnail.swift in Sources */,
+				4ADF751E24CE6AE500346D65 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
