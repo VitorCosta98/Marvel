@@ -9,13 +9,13 @@
 import Foundation
 
 protocol HomeWorkerProtocol {
-    func makeGETRequest(urlString: String, completion: @escaping(APIResponse) -> Void)
-    func decode(data: Data) -> APIResponse?
+    func makeGETRequest(urlString: String, completion: @escaping(APIResponseCharacters) -> Void)
+    func decode(data: Data) -> APIResponseCharacters?
 }
 
 class HomeWorker: HomeWorkerProtocol {
     
-    func makeGETRequest(urlString: String, completion: @escaping(APIResponse) -> Void) {
+    func makeGETRequest(urlString: String, completion: @escaping(APIResponseCharacters) -> Void) {
         guard let url = URL(string: urlString) else { return }
 
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
@@ -35,7 +35,7 @@ class HomeWorker: HomeWorkerProtocol {
         }.resume()
     }
     
-    func decode(data: Data) -> APIResponse? {
-        return try? JSONDecoder().decode(APIResponse.self, from: data)
+    func decode(data: Data) -> APIResponseCharacters? {
+        return try? JSONDecoder().decode(APIResponseCharacters.self, from: data)
     }
 }
