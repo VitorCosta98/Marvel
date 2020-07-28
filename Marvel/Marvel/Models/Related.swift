@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Comics: Codable{
+struct Related: Codable{
     var id: Int
     var title: String
-    var description: String
+    var description: String?
     var modified: String
     var thumbnail: Thumbnail
     var creators: Creators
-    var prices: [Prices]
+    var prices: [Prices]?
 }
 
 struct Creators: Codable {
