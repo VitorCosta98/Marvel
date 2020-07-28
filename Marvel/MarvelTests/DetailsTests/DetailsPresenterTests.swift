@@ -7,27 +7,37 @@
 //
 
 import XCTest
+@testable ipmort Marvel
 
 class DetailsPresenterTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var view: MockViewController?
+    var presenter: DetailsPresenter?
+    
+    override func setUp() {
+        view = MockViewController()
+        presenter = DetailsPresenter(view: view)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        view = nil
+        presenter = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testIfPresenterIsCorrectlyCallingFuncShowOfTheView() {
+        
     }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+class MockDetailsViewController: DetailsViewControllerProtocol {
+    var interactor: DetailsViewInteractorProtocol?
+    var showComicsWasCalled = false
+    var showSeriesWasCalled = false
+    
+    func show(comics: [Related]) {
+        showComicsWasCalled = true
     }
-
+    
+    func show(series: [Related]) {
+        showComicsWasCalled = true
+    }
 }
