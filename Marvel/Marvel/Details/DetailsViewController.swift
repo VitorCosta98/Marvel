@@ -10,7 +10,9 @@ import UIKit
 
 protocol DetailsViewControlerProtocol {
     var interactor: DetailsInteractorProtocol? { get set }
-    func show(comics: [Comics])
+    func show(comics: [Related])
+    func show(series: [Related])
+    func setup(urlCharacterImage: URL, characterName: String)
 }
 
 class DetailsViewController: UIViewController, DetailsViewControlerProtocol {
@@ -19,7 +21,8 @@ class DetailsViewController: UIViewController, DetailsViewControlerProtocol {
     @IBOutlet weak var collectionComics: UICollectionView!
     @IBOutlet weak var collectionSeries: UICollectionView!
     var interactor: DetailsInteractorProtocol?
-    var comics: [Comics] = []
+    var comics: [Related] = []
+    var series: [Related] = []
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -38,11 +41,25 @@ class DetailsViewController: UIViewController, DetailsViewControlerProtocol {
     }
     
     //MARK: Functions
-    func show(comics: [Comics]) {
+    func show(comics: [Related]) {
         self.comics = comics
         DispatchQueue.main.async {
             self.collectionComics.reloadData()
         }
+    }
+    
+    func show(series: [Related]) {
+        self.series = series
+        DispatchQueue.main.async {
+            self.collectionSeries.reloadData()
+        }
+    }
+    
+    func setup(urlCharacterImage: URL, characterName: String) {
+        if let image = try? Data(contentsOf: urlCharacterImage) {
+            imageCharacter.image = UIImage(data: image)
+        }
+        nameCharacter.text = characterName
     }
 }
 
@@ -52,7 +69,7 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
         if collectionView == collectionComics {
             return comics.count
         }
-        return comics.count
+        return series.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,8 +81,8 @@ extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
         } else if collectionView == collectionSeries {
             if let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeriesViewCell", for: indexPath) as? SeriesViewCell {
-                guard let urlImage = URL(string: "https://images-na.ssl-images-amazon.com/images/I/817R7vTuFwL.jpg") else { return UICollectionViewCell() }
-                seriesCell.setup(imageURL: urlImage, name: "some")
+                guard let urlImage = URL(string: "\(series[indexPath.row].thumbnail.path).\(series[indexPath.row].thumbnail.ext)") else { return UICollectionViewCell() }
+                seriesCell.setup(imageURL: urlImage, name: series[indexPath.row].title)
                 return seriesCell
             }
         }
