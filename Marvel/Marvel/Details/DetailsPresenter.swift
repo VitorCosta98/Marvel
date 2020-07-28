@@ -10,7 +10,7 @@ import Foundation
 
 protocol DetailsPresenterProtocol {
     var view: DetailsViewControlerProtocol? { get set }
-    func show(characters: [Comics])
+    func show(comics: [Comics])
 }
 
 class DetailsPresenter: DetailsPresenterProtocol {
@@ -20,7 +20,7 @@ class DetailsPresenter: DetailsPresenterProtocol {
         self.view = view
     }
     
-    func show(characters: [Comics]) {
-        view?.show(characters: characters)
+    func show(comics: [Comics]) {
+        view?.show(comics: comics)
     }
 }
