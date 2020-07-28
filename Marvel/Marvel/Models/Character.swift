@@ -20,6 +20,7 @@ struct RelatedWorks: Codable {
     var returned: Int
     var items: [Items]
     var available: Int
+    var collectionURI: String
 }
 
 struct Items: Codable {
