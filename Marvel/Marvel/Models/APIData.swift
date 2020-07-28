@@ -11,7 +11,7 @@ import Foundation
 struct APIDataCharacters: Codable {
     var offset: Int
     var limit: Int
-    var total: Int
+    var total: Int 
     var count: Int
     var results: [Character]
 }
@@ -21,5 +21,5 @@ struct APIDataComics: Codable {
     var limit: Int
     var total: Int
     var count: Int
-    var results: [Comics]
+    var results: [Related]
 }
