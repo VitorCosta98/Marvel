@@ -10,6 +10,12 @@ import UIKit
 
 class ComicsViewCell: UICollectionViewCell {
     @IBOutlet weak var comicImage: UIImageView!
-    @IBOutlet weak var comicName: UILabel!
+    @IBOutlet weak var comicTitle: UILabel!
     
+    func setup(imageURL: URL, title: String) {
+        if let data = try? Data(contentsOf: imageURL) {
+            comicImage.image = UIImage(data: data)
+        }
+        comicTitle.text = title
+    }
 }
