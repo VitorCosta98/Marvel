@@ -45,7 +45,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as? HomeViewCell {
             guard let urlImage = URL(string: "\(characters[indexPath.row].thumbnail.path).\(characters[indexPath.row].thumbnail.ext)") else { return UITableViewCell()}
             cell.setup(imageURL: urlImage, name: characters[indexPath.row].name)
             return cell
