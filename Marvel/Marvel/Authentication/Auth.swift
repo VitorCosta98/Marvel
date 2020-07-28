@@ -9,27 +9,11 @@
 import Foundation
 import CryptoKit
 
-enum Endpoints: String {
-    case characters = "https://gateway.marvel.com/v1/public/characters?"
-    case comics = "https://gateway.marvel.com/v1/public/characters/"
-}
-
 class Auth {
-    var endpoint: Endpoints
     
-    init(endPoint: Endpoints) {
-        self.endpoint = endPoint
-    }
-    
-    func makeStringURL(apiKey: String, timeStamp: Int, privateKey: String, id: String = "") -> String {
+    func makeAuthenticatedURL(baseURL: String, apiKey: String, timeStamp: Int, privateKey: String) -> String {
         let hash = makeHash(apikey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
-        
-        switch endpoint {
-        case .characters:
-            return "\(endpoint.rawValue)ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
-        case .comics:
-            return "\(endpoint.rawValue)\(id)/comics?ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
-        }
+        return "\(baseURL)?ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
     }
     
     private func makeHash(apikey: String, timeStamp: Int, privateKey: String) -> String {
