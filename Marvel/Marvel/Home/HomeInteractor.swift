@@ -17,7 +17,7 @@ protocol HomeInteractorProtocol {
 class HomeInteractor: HomeInteractorProtocol {
     var worker: HomeWorkerProtocol?
     var presenter: HomePresenterProtocol?
-    private let auth = Auth(endPoint: .characters)
+    private let auth = Auth()
     private let apiKey = "b64080ac39198f95abcdb20fc185b688"
     private let privateKey = "d4cce909b9e33cd8cb10d483c082a8fe2fca0322"
     
@@ -34,6 +34,6 @@ class HomeInteractor: HomeInteractorProtocol {
     
     private func makeStringURL() -> String {
         let timeStamp = Int(Date().timeIntervalSince1970)
-        return auth.makeStringURL(apiKey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
+        return auth.makeAuthenticatedURL(baseURL: "https://gateway.marvel.com/v1/public/characters", apiKey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
     }
 }
