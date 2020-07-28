@@ -29,7 +29,6 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-SO-PRO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>
-                                    <color key="backgroundColor" red="0.7793879534" green="0.62437399599999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="434" id="xbg-GZ-dsC"/>
                                     </constraints>
@@ -58,7 +57,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="393" id="G8f-3z-wWW"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dqx-RI-IEB">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="dqx-RI-IEB">
                                         <size key="itemSize" width="260" height="393"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -71,7 +70,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="393" id="kbb-DR-MeO"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="6KF-AG-aSn">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="6KF-AG-aSn">
                                         <size key="itemSize" width="260" height="393"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
