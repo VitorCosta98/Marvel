@@ -8,9 +8,15 @@
 
 import Foundation
 
+enum RelatedType {
+    case comics
+    case series
+}
+
 protocol DetailsPresenterProtocol {
     var view: DetailsViewControlerProtocol? { get set }
-    func show(comics: [Comics])
+    func show(related: [Related], type: RelatedType)
+    func setup(image: String, name: String)
 }
 
 class DetailsPresenter: DetailsPresenterProtocol {
@@ -20,7 +26,18 @@ class DetailsPresenter: DetailsPresenterProtocol {
         self.view = view
     }
     
-    func show(comics: [Comics]) {
-        view?.show(comics: comics)
+    func show(related: [Related], type: RelatedType) {
+        switch type {
+        case .comics:
+            view?.show(comics: related)
+        case .series:
+            view?.show(series: related)
+        }
+    }
+    
+    func setup(image: String, name: String) {
+        if let imageURL = URL(string: image) {
+            view?.setup(urlCharacterImage: imageURL, characterName: name)
+        }
     }
 }
