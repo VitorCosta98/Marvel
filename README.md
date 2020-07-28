@@ -1,5 +1,5 @@
 # Marvel
-Marvel iOS application written in Swift 5 using MVVM-C with clean architecture concepts
+Marvel iOS application written in Swift 5 using VIP with clean architecture concepts
 
 ## Requirements
 * Swift 5.0
