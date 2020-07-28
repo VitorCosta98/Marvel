@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         controller.interactor = interactor
         
         let nav = UINavigationController(rootViewController: controller)
+        nav.navigationBar.topItem?.title = "Marvel"
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
