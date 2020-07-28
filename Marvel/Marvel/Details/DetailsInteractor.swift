@@ -17,8 +17,8 @@ protocol DetailsInteractorProtocol {
 class DetailsInteractor: DetailsInteractorProtocol {
     var worker: DetailsWorkerProtocol?
     var presenter: DetailsPresenterProtocol?
+    var character: Character?
     private let id: Int
-    private let auth = Auth(endPoint: .comics)
     private let apiKey = "b64080ac39198f95abcdb20fc185b688"
     private let privateKey = "d4cce909b9e33cd8cb10d483c082a8fe2fca0322"
     
@@ -29,13 +29,21 @@ class DetailsInteractor: DetailsInteractorProtocol {
     }
     
     func onViewLoad() {
-        worker?.makeGETRequest(urlString: makeStringURL()) { response in
-            self.presenter?.show(comics: response.data.results)
+        guard let character = character else { return }
+        presenter?.setup(image: "\(character.thumbnail.path).\(character.thumbnail.ext)", name: character.name)
+        //fetch comics
+        worker?.makeGETRequest(urlString: makeStringURL(related: character.comics)) { response in
+            self.presenter?.show(related: response.data.results, type: .comics)
+        }
+        //fetch series
+        worker?.makeGETRequest(urlString: makeStringURL(related: character.series)) { response in
+            self.presenter?.show(related: response.data.results, type: .series)
         }
     }
     
-    private func makeStringURL() -> String {
+    private func makeStringURL(related: RelatedWorks) -> String {
         let timeStamp = Int(Date().timeIntervalSince1970)
-        return auth.makeStringURL(apiKey: apiKey, timeStamp: timeStamp, privateKey: privateKey, id: "\(id)")
+        let auth = Auth()
+        return auth.makeAuthenticatedURL(baseURL: related.collectionURI, apiKey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
     }
 }
