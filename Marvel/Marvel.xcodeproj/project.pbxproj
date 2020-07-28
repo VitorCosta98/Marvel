@@ -10,7 +10,7 @@
 		4A18CACF24CF1D37000327B9 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CACE24CF1D37000327B9 /* HomePresenter.swift */; };
 		4A18CAD324CF2AD2000327B9 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CAD224CF2AD2000327B9 /* HomePresenterTests.swift */; };
 		4A18CAD624CF436F000327B9 /* DetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A18CAD524CF436F000327B9 /* DetailsView.xib */; };
-		4A18CAD824CF4811000327B9 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CAD724CF4811000327B9 /* Comics.swift */; };
+		4A18CAD824CF4811000327B9 /* Related.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CAD724CF4811000327B9 /* Related.swift */; };
 		4A18CADA24CF6450000327B9 /* DetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CAD924CF6450000327B9 /* DetailsWorker.swift */; };
 		4A18CADC24CF694E000327B9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CADB24CF694E000327B9 /* DetailsViewController.swift */; };
 		4A18CADE24CF6AC9000327B9 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A18CADD24CF6AC9000327B9 /* DetailsPresenter.swift */; };
@@ -53,7 +53,7 @@
 		4A18CACE24CF1D37000327B9 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		4A18CAD224CF2AD2000327B9 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		4A18CAD524CF436F000327B9 /* DetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsView.xib; sourceTree = "<group>"; };
-		4A18CAD724CF4811000327B9 /* Comics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
+		4A18CAD724CF4811000327B9 /* Related.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Related.swift; sourceTree = "<group>"; };
 		4A18CAD924CF6450000327B9 /* DetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWorker.swift; sourceTree = "<group>"; };
 		4A18CADB24CF694E000327B9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4A18CADD24CF6AC9000327B9 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				4ADF751224CE696F00346D65 /* APIResponse.swift */,
 				4ADF751424CE69A400346D65 /* APIData.swift */,
 				4ADF751624CE69C400346D65 /* Character.swift */,
-				4A18CAD724CF4811000327B9 /* Comics.swift */,
+				4A18CAD724CF4811000327B9 /* Related.swift */,
 				4ADF751824CE69E600346D65 /* Thumbnail.swift */,
 			);
 			path = Models;
@@ -340,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A18CAD824CF4811000327B9 /* Comics.swift in Sources */,
+				4A18CAD824CF4811000327B9 /* Related.swift in Sources */,
 				4ADF74EA24CE679400346D65 /* AppDelegate.swift in Sources */,
 				4ADF752624CE77F600346D65 /* HomeWorker.swift in Sources */,
 				4A18CAE524CF7B66000327B9 /* ComicsViewCell.swift in Sources */,
