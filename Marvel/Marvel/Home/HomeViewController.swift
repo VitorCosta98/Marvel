@@ -52,4 +52,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = DetailsViewController(nibName: "DetailsView", bundle: nil)
+        let worker = DetailsWorker()
+        let presenter = DetailsPresenter(view: controller)
+        let interactor = DetailsInteractor(worker: worker, presenter: presenter, id: characters[indexPath.row].id)
+        controller.interactor = interactor
+        interactor.character = characters[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
