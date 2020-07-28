@@ -18,7 +18,7 @@ class DetailsInteractor: DetailsInteractorProtocol {
     var worker: DetailsWorkerProtocol?
     var presenter: DetailsPresenterProtocol?
     private let id: Int
-    private let auth = Auth(endPoint: .characters)
+    private let auth = Auth(endPoint: .comics)
     private let apiKey = "b64080ac39198f95abcdb20fc185b688"
     private let privateKey = "d4cce909b9e33cd8cb10d483c082a8fe2fca0322"
     
@@ -30,7 +30,7 @@ class DetailsInteractor: DetailsInteractorProtocol {
     
     func onViewLoad() {
         worker?.makeGETRequest(urlString: makeStringURL()) { response in
-            self.presenter?.show(characters: response.data.results)
+            self.presenter?.show(comics: response.data.results)
         }
     }
     
