@@ -20,7 +20,7 @@ class HomePresenterTests: XCTestCase {
         
         let thumb = Thumbnail(path: "", ext: "")
         let items = [Items(name: "", resourceURI: "")]
-        let relatedWorks = RelatedWorks(returned: 0, items: items, available: 0)
+        let relatedWorks = RelatedWorks(returned: 0, items: items, available: 0, collectionURI: "")
         let character1 = Character(id: 0, name: "", thumbnail: thumb, comics: relatedWorks, series: relatedWorks)
         let character2 = Character(id: 0, name: "", thumbnail: thumb, comics: relatedWorks, series: relatedWorks)
         characters = [character1, character2]

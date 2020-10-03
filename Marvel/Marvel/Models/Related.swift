@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Related: Codable{
+struct Related: Codable {
     var id: Int
     var title: String
     var description: String?

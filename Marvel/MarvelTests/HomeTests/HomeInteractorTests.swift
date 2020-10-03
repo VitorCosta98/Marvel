@@ -12,11 +12,11 @@ import XCTest
 class HomeInteractorTests: XCTestCase {
     var worker: MockHomeWorker?
     var interactor: HomeInteractor?
-    var presenter: MockPresenter?
+    var presenter: MockHomePresenter?
     
     override func setUp() {
         worker = MockHomeWorker()
-        presenter = MockPresenter()
+        presenter = MockHomePresenter()
         interactor = HomeInteractor(worker: worker!, presenter: presenter!)
     }
 
@@ -42,33 +42,26 @@ class HomeInteractorTests: XCTestCase {
 class MockHomeWorker: HomeWorkerProtocol {
     var decodeWasCalled = false
     var makeGETRequestWasCalled = false
-    var response: APIResponse?
+    var response: APIResponseCharacters?
     
-    func makeGETRequest(urlString: String, completion: @escaping (APIResponse) -> Void) {
+    func makeGETRequest(urlString: String, completion: @escaping (APIResponseCharacters) -> Void) {
         makeGETRequestWasCalled = true
         
-        var characters: [Character] = []
-        let thumb = Thumbnail(path: "", ext: "")
-        let items = [Items(name: "", resourceURI: "")]
-        let relatedWorks = RelatedWorks(returned: 0, items: items, available: 0, collectionURI: "")
-        let character1 = Character(id: 0, name: "", thumbnail: thumb, comics: relatedWorks, series: relatedWorks)
-        let character2 = Character(id: 0, name: "", thumbnail: thumb, comics: relatedWorks, series: relatedWorks)
-        characters = [character1, character2]
-        let apiData = APIData(offset: 0, limit: 0, total: 0, count: 0, results: characters)
-        response = APIResponse(code: 0, status: "", data: apiData)
-        characters = [character1, character2]
+        let apiData = APIDataCharacters(offset: 0, limit: 0, total: 0, count: 0, results: [Character]())
+        response = APIResponseCharacters(code: 0, status: "", data: apiData)
+        
         guard let response = response else { return }
         
         completion(response)
     }
 
-    func decode(data: Data) -> APIResponse? {
+    func decode(data: Data) -> APIResponseCharacters? {
         decodeWasCalled = true
         return nil
     }
 }
 
-class MockPresenter: HomePresenterProtocol {
+class MockHomePresenter: HomePresenterProtocol {
     var view: HomeViewControlerProtocol?
     var showWasCalled = false
     

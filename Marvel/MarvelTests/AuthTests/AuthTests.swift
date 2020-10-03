@@ -13,7 +13,7 @@ class AuthTests: XCTestCase {
     var auth: Auth?
     
     override func setUp() {
-        auth = Auth(endPoint: .characters)
+        auth = Auth()
     }
 
     override func tearDown() {
@@ -21,10 +21,15 @@ class AuthTests: XCTestCase {
     }
 
     func testIfURLStringGeneratedIsCorrect() throws {
-        let urlString = auth?.makeStringURL(apiKey: "myApiKey", timeStamp: 123, privateKey: "myPrivateKey")
+        let timeStamp = Int(NSDate().timeIntervalSince1970)
+        let privateKey = "123"
+        let apiKey = "MyAPIKey"
+        let baseURL = "https:\\www.marvel.com"
+        let hash = "\(timeStamp)\(privateKey)\(apiKey)".MD5()
+        let mockURLResult = "\(baseURL)?ts=\(timeStamp)&apikey=\(apiKey)&hash=\(hash)"
         
-        //simulating creating a hash
-        let hash = "123myPrivateKeymyApiKey".MD5()
-        XCTAssertEqual(urlString, "https://gateway.marvel.com/v1/public/characters?ts=123&apikey=myApiKey&hash=\(hash)")
+        let urlGenerated = auth?.makeAuthenticatedURL(baseURL: baseURL, apiKey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
+        
+        XCTAssertEqual(mockURLResult, urlGenerated)
     }
 }

@@ -18,14 +18,12 @@ class DetailsInteractor: DetailsInteractorProtocol {
     var worker: DetailsWorkerProtocol?
     var presenter: DetailsPresenterProtocol?
     var character: Character?
-    private let id: Int
     private let apiKey = "b64080ac39198f95abcdb20fc185b688"
     private let privateKey = "d4cce909b9e33cd8cb10d483c082a8fe2fca0322"
     
     init(worker: DetailsWorkerProtocol, presenter: DetailsPresenterProtocol, id: Int) {
         self.worker = worker
         self.presenter = presenter
-        self.id = id
     }
     
     func onViewLoad() {

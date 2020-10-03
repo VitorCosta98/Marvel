@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol DetailsViewControlerProtocol {
+protocol DetailsViewControllerProtocol {
     var interactor: DetailsInteractorProtocol? { get set }
     func show(comics: [Related])
     func show(series: [Related])
     func setup(urlCharacterImage: URL, characterName: String)
 }
 
-class DetailsViewController: UIViewController, DetailsViewControlerProtocol {
+class DetailsViewController: UIViewController, DetailsViewControllerProtocol {
     @IBOutlet weak var imageCharacter: UIImageView!
     @IBOutlet weak var nameCharacter: UILabel!
     @IBOutlet weak var collectionComics: UICollectionView!

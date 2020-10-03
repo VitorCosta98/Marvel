@@ -14,15 +14,15 @@ enum RelatedType {
 }
 
 protocol DetailsPresenterProtocol {
-    var view: DetailsViewControlerProtocol? { get set }
+    var view: DetailsViewControllerProtocol? { get set }
     func show(related: [Related], type: RelatedType)
     func setup(image: String, name: String)
 }
 
 class DetailsPresenter: DetailsPresenterProtocol {
-    var view: DetailsViewControlerProtocol?
+    var view: DetailsViewControllerProtocol?
     
-    init(view: DetailsViewControlerProtocol) {
+    init(view: DetailsViewControllerProtocol) {
         self.view = view
     }
     
