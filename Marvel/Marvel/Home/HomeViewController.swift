@@ -22,8 +22,8 @@ class HomeViewController: UIViewController, HomeViewControlerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "TableView", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "TableCell")
+        let nib = UINib(nibName: "HomeViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "HomeViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         interactor?.onViewLoad()
@@ -45,7 +45,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as? HomeViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell") as? HomeViewCell {
             guard let urlImage = URL(string: "\(characters[indexPath.row].thumbnail.path).\(characters[indexPath.row].thumbnail.ext)") else { return UITableViewCell()}
             cell.setup(imageURL: urlImage, name: characters[indexPath.row].name)
             return cell
