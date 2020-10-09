@@ -18,8 +18,6 @@ class DetailsInteractor: DetailsInteractorProtocol {
     var worker: DetailsWorkerProtocol?
     var presenter: DetailsPresenterProtocol?
     var character: Character?
-    private let apiKey = "b64080ac39198f95abcdb20fc185b688"
-    private let privateKey = "d4cce909b9e33cd8cb10d483c082a8fe2fca0322"
     
     init(worker: DetailsWorkerProtocol, presenter: DetailsPresenterProtocol, id: Int) {
         self.worker = worker
@@ -42,6 +40,6 @@ class DetailsInteractor: DetailsInteractorProtocol {
     private func makeStringURL(related: RelatedWorks) -> String {
         let timeStamp = Int(Date().timeIntervalSince1970)
         let auth = Auth()
-        return auth.makeAuthenticatedURL(baseURL: related.collectionURI, apiKey: apiKey, timeStamp: timeStamp, privateKey: privateKey)
+        return auth.makeAuthenticatedURL(baseURL: related.collectionURI, apiKey: PersonalAccess.apiKey.rawValue, timeStamp: timeStamp, privateKey: PersonalAccess.privateKey.rawValue)
     }
 }
